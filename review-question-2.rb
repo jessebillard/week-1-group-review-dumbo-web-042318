@@ -1,8 +1,29 @@
+require 'pry'
 # Finish the implementation of the Car class so it has the functionality described below
 
 class Car
 
+    attr_accessor :make, :model
 
+    @@all = []
+
+    def initialize(make, model)
+        @make = make
+        @model = model
+        @@all << self
+    end 
+
+    def make
+        @make
+    end 
+
+    def drive
+        "VROOOOOOOOOOOOM!"
+    end 
+
+    def self.all
+        @@all
+    end 
 
 end
 
@@ -18,7 +39,9 @@ car.drive
 Car.all
 #=> [car1, car2, car3]
 
-BONUS:
+binding.pry
+1
+
 
 Car.new(make: "volvo", model: "lightening")
 
